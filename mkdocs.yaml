@@ -1,0 +1,136 @@
+site_name: CAPTURE Wiki
+site_url: https://filipe-cavalheiro.github.io/CAPTURE-Wiki/
+repo_url: https://github.com/Filipe-Cavalheiro/CAPTURE-Wiki
+repo_name: CAPTURE-Wiki
+#edit_uri: edit/main/docs/
+site_author: Francisco Santos, Filipe Cavalheiro
+theme:
+  name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: black
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: black
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
+
+  icon:
+    logo: material/quadcopter
+    repo: fontawesome/brands/git-alt
+  #favicon: images/favicon.png
+  # Extra features
+  features:
+  - navigation.instant
+  - navigation.tracking
+  - navigation.sections
+  - toc.follow
+  - navigation.top
+    # ---------------------
+    # Search
+    # ---------------------
+    # Search suggestions in search button
+  - search.suggest
+  - search.highlight
+    # Allow sharing a search result
+  - search.share
+  - navigation.footer
+  - toc.integrate
+  - navigation.indexes
+  - navigation.tabs
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - monorepo
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      lang:
+      - en
+      - pt
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+extra:
+  # ---------------------
+  # Remove the 'made with mkdocs'
+  # ---------------------
+  generator: false
+  version:
+    provider: mike
+    default: latest
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - stylesheets/js.js
+
+nav:
+  - Introduction: 'index.md'
+  - Vehicles:
+    - 'Vehicles/index.md'
+    - EasyGlider4: 
+      - 'Vehicles/EasyGlider4/index.md'
+      - CAD Model:
+        - 'Vehicles/EasyGlider4/CAD Model/index.md'
+      - Hardware Setup:
+        - 'Vehicles/EasyGlider4/Hardware Setup/index.md'
+      - Software Setup:
+        - 'Vehicles/EasyGlider4/Software Setup/index.md'
+    - M690B: 
+      - 'Vehicles/M690B/index.md'
+      - Hardware Setup:
+        - 'Vehicles/M690B/Hardware Setup/index.md'
+        - Onboard Computer: 'Vehicles/M690B/Hardware Setup/onboard_computer.md'
+        - Flight Computer: 'Vehicles/M690B/Hardware Setup/flight_computer.md'
+        - Radio and Receiver: 'Vehicles/M690B/Hardware Setup/radio_and_receiver.md'
+      - Software Setup:
+        - 'Vehicles/M690B/Software Setup/index.md'
+        - OS installation and Setup: 'Vehicles/M690B/Software Setup/os_installation.md'
+        - ROS and MAVROS installation: 'Vehicles/M690B/Software Setup/ros_installation.md'
+        - PX4 Configuration Checklist: 'Vehicles/M690B/Software Setup/px4_configuration_checklist.md'
+        - Drone Control Stack Setup: 'Vehicles/M690B/Software Setup/drone_control_stack.md'
+        - Usefull Packages: 'Vehicles/M690B/Software Setup/usefull_packages.md'
+        - Drone Console: 'Vehicles/M690B/Software Setup/drone_console.md'
+        - Workspace Syncronization: 'Vehicles/M690B/Software Setup/ws_sync.md'
+  - Known Issues: 'known_issues.md'
+  - Mission Logs:
+    - 'Mission Logs/index.md'
+    - 05-07-2023: 'Mission Logs/05-07-2023.md'
+    - 13-07-2023: 'Mission Logs/13-07-2023.md'
+    - 20-07-2023: 'Mission Logs/20-07-2023.md'
+    - 27-07-2023: 'Mission Logs/27-07-2023.md'
+    - 28-07-2023: 'Mission Logs/28-07-2023.md'
+    - 22-09-2023: 'Mission Logs/22-09-2023.md'
+    - 29-09-2023: 'Mission Logs/29-09-2023.md'
+    - 13-10-2023: 'Mission Logs/13-10-2023.md'
+    - 17-11-2023: 'Mission Logs/17-11-2023.md'
+    - 06-12-2023: 'Mission Logs/06-12-2023.md'
+  - Roadmap: 'roadmap.md'
+  - Reference:
+    - Equipment Details: 'Reference/equipment_details.md'
+    - Generating the Documentation: 'Reference/generating_docs.md'
