@@ -2,8 +2,9 @@
 
 This repository contains the documentation for preparing, testing and conducting indoor/outdoor missions using the M690B drone. More information can be found in the [wiki](https://cybaer-nova.github.io/capture-wiki/).
 
-# Requirements
+# Contributing
 ```bash
+    pip install mkdocs
     python3 -m pip install -r requirements.txt
 ```
 - mkdocs==1.5.3
